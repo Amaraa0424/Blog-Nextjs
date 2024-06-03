@@ -22,9 +22,9 @@ const Feed = ({ data }: { data: [] }) => {
     <div>
       {filteredpost.length > 0
         ? filteredpost.map((item: any) => (
-            <Article key={item._id} props={...item} />
+            <Article key={item._id} props={item} />
           ))
-        : data?.map((item: any) => <Article key={item._id} props={...item} />)}
+        : data?.map((item: any) => <Article key={item._id} props={item} />)}
     </div>
   );
 };

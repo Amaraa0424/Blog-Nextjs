@@ -16,7 +16,7 @@ import Link from "next/link";
 import Liked from "./Icons/Liked";
 import { RequestSuccessStore } from "../../../store/RequestSuccessStore";
 
-const Article = ({ props }: { props: any }) => {
+const  Article = ({ props }: { props: any }) => {
   const { data }: any = useSession();
 
   const requestSuccessStore: any = RequestSuccessStore();
@@ -49,13 +49,10 @@ const Article = ({ props }: { props: any }) => {
     }
   };
   const onDelete = async () => {
-    alert("Are you sure you want to delete");
     await axios
       .delete(`api/post/delete?id=${props._id}`)
       .then(() => {
         window.location.reload();
-        // alert("Deleted");
-        // router.refresh();
       })
       .catch((error) => console.log(error));
   };
@@ -93,7 +90,7 @@ const Article = ({ props }: { props: any }) => {
             {props.content.slice(0, 350)}
           </p>
         </div>
-        <img src={props.image} className="w-52 h-36 rounded-lg" />
+        {props.image && <img src={props.image} className="w-52 h-36 rounded-lg" />}
       </div>
       <div className="mt-5 md:hidden">
         <img
@@ -124,7 +121,7 @@ const Article = ({ props }: { props: any }) => {
           {props.author.id === data?.user.id ? (
             <div className="flex items-center gap-4 md:gap-8 justify-center">
               <Delete onClick={onDelete} />
-              <Link href={`/uploadbutton/update`}>
+              <Link href={`/update/${props._id}`}>
                 {" "}
                 <Edit />
               </Link>

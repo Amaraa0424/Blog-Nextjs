@@ -43,7 +43,7 @@ const Navbar = () => {
       >
         {" "}
         <Logo />
-        <span className="font-bold text-lg  md:text-xl">Story</span>
+        <span className="font-bold text-lg  md:text-xl">E-Blog</span>
       </Link>
 
       <div className="flex gap-3">
@@ -102,26 +102,14 @@ const DropDown = () => {
       path: `/profile/${data?.user?.id}`,
     },
     {
-      id: 2,
-      text: "About",
-      icon: <About />,
-      path: "/about",
-    },
-    {
       id: 3,
       text: "Log out",
       icon: <Logout />,
     },
-    {
-      id: 4,
-      text: "Developer Info",
-      icon: <Developer />,
-      path: "/developer",
-    },
   ];
 
   return (
-    <div className="bg-white w-56 h-64 p-5 absolute right-0 top-14 shadow-xl border  rounded-md">
+    <div className="bg-white w-56 h-max p-5 absolute right-0 top-14 shadow-xl border rounded-md cursor-pointer">
       {items.map((d: any) => (
         <div
           className="cursor-pointer flex items-center gap-5 font-medium text-base mb-5 hover:bg-slate-300 rounded-md p-2"

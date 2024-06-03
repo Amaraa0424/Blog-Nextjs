@@ -17,41 +17,36 @@ const CategoryBar = () => {
   const data = [
     {
       id: 0,
-      label: "Home",
+      label: "Үндсэн",
       path: "/",
     },
     {
       id: 1,
-      label: "Sports",
-      path: "/category/sports",
+      label: "Түүх",
+      path: "/category/history",
     },
     {
       id: 2,
-      label: "Entertainment",
-      path: "/category/entertainment",
+      label: "Хиймэл оюун ухаан",
+      path: "/category/ai",
     },
     {
       id: 3,
-      label: "Science",
-      path: "/category/science",
-    },
-    {
-      id: 4,
-      label: "Technology",
-      path: "/category/technology",
+      label: "Covid-19",
+      path: "/category/covid",
     },
     {
       id: 5,
-      label: "Space",
+      label: "Сансар судлал",
       path: "/category/space",
     },
   ];
 
   const people = [
     { name: "Home", path: "/" },
-    { name: "Sports", path: "/category/sports" },
-    { name: "Entertainment", path: "/category/science" },
-    { name: "Science", path: "/category/technology" },
+    { name: "History", path: "/category/history" },
+    { name: "Ai", path: "/category/ai" },
+    { name: "Covid-19", path: "/category/covid" },
     { name: "Space", path: "/category/space" },
   ];
   const [selected, setSelected] = useState(people[0]);

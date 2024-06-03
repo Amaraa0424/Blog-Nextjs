@@ -16,6 +16,10 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  id: {
+    type: String,
+    required: true,
+  },
   likes: [{ type: mongoose.Types.ObjectId, ref: "User" }],
   comments: [
     {

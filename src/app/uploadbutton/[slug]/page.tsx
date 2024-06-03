@@ -37,7 +37,10 @@ export default function Home() {
     setLoading(true);
 
     const response = await axios
-      .post("/api/post/create", { ...data, category: selected.name })
+      .post("/api/post/create", { 
+        ...data,
+        category: selected.name,
+      })
       .then(() => {
         setLoading(false);
         router.refresh();
@@ -49,9 +52,8 @@ export default function Home() {
       });
   };
 
-  const handleUpdate = async () => {};
   return (
-    <main className="flex min-h-screen w-full xl:w-[70%]    flex-col p-5  sm:p-10   lg:p-24">
+    <main className="flex min-h-screen w-full xl:w-[70%] flex-col p-5  sm:p-10   lg:p-24">
       <h1 className="text-black font-bold text-left w-full mb-5">
         {pathname.split("/")[2] === "create"
           ? "Create a Post"
@@ -153,3 +155,4 @@ export default function Home() {
     </main>
   );
 }
+

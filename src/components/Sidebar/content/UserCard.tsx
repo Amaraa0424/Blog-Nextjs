@@ -43,7 +43,7 @@ const UserCard = () => {
 
   return (
     <div className="shadow-md mt-10 max-w-sm bg-slate-100 rounded-lg p-5">
-      <h1 className="text-sm font-semibold">Users You Can Follow</h1>
+      <h1 className="text-sm font-semibold">Бусад хэрэглэгчид</h1>
 
       <div className="w-full mt-5 transition-all duration-300">
         {isLoading ? (

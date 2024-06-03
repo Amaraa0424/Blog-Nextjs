@@ -7,6 +7,19 @@ const nextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com", "res.cloudinary.com"],
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Referrer-Policy',
+            value: 'no-referrer-when-downgrade',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

@@ -6,7 +6,6 @@ import Post from "../../../../../models/postModel";
 
 export const PUT = async (request: NextRequest) => {
   const data = await request.json();
-  const id: string = request.nextUrl.searchParams.get("id") || "";
 
   try {
     await dbConnection();
@@ -17,7 +16,7 @@ export const PUT = async (request: NextRequest) => {
     }
     await Post.findOneAndUpdate(
       {
-        _id: id,
+        _id: data.id,
       },
       {
         title: data.title,

@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Post from "../../../../../models/postModel";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../auth/[...nextauth]/route";
+import _uniqueId from 'lodash/uniqueId';
 
 export const POST = async (request: NextRequest) => {
   const data = await request.json();
@@ -19,17 +20,18 @@ export const POST = async (request: NextRequest) => {
       title: data.title,
       content: data.content,
       image: data.image,
+      id: _uniqueId(""),
 
       category: data.category,
       author: {
         id: session.user.id,
         name: session.user.name,
         avatar: session.user.image,
-        slug: "Software Developer",
+        slug: "User",
       },
     });
     return NextResponse.json(
-      { message: "Created Successfully" },
+      { message: "Амжилттай үүсгэлээ" },
       { status: 201 }
     );
   } catch (error) {
